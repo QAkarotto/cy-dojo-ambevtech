@@ -1,0 +1,18 @@
+[
+    {
+        "email":"goku@email.com",
+        "password": "senha@123"
+    },
+    {
+        "email":"goku2@email.com",
+        "password": "senha@123"
+    },
+    {
+        "email":"goku3@email.com",
+        "password": "senha@123"
+    },
+    {
+        "email":"goku4@email.com",
+        "password": "senha@123"
+    }
+]
