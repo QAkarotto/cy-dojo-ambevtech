@@ -37,14 +37,43 @@ describe('Funcionalidade: Perfil', () => {
     it('Criação de perfil com sucesso - usando fixture', () => {
         
         cy.fixture('perfil').then((profile) => {
-            cy.criarPerfil(profile)
+            const perfilFixture = {
+                empresa: profile.empresa,
+                website: profile.website,
+                localizacao: profile.localizacao,
+                conhecimentos: profile.conhecimentos,
+                usuarioGitHub: profile.usuarioGitHub,
+                bio: profile.bio,
+                twitterUrl: profile.twitterUrl,
+                facebookUrl: profile.facebookUrl,
+                youtubeUrl: profile.youtubeUrl,
+                linkedinUrl: profile.linkedinUrl,
+                instagramUrl: profile.instagramUrl,
+                mediumUrl: profile.mediumUrl
+            }
+            cy.criarPerfil(perfilFixture)
         })
+
 
         cy.get('[data-test="alert"]').should('contain', 'Perfil Criado')
     });
 
     it('Criação de perfil com sucesso - usando importação', () => {
-        cy.criarPerfil(perfis[1])
+        const perfilImportado = {
+            empresa: perfis[1].empresa,
+            website: perfis[1].website,
+            localizacao: perfis[1].localizacao,
+            conhecimentos: perfis[1].conhecimentos,
+            usuarioGitHub: perfis[1].usuarioGitHub,
+            bio: perfis[1].bio,
+            twitterUrl: perfis[1].twitterUrl,
+            facebookUrl: perfis[1].facebookUrl,
+            youtubeUrl: perfis[1].youtubeUrl,
+            linkedinUrl: perfis[1].linkedinUrl,
+            instagramUrl: perfis[1].instagramUrl,
+            mediumUrl: perfis[1].mediumUrl
+        }
+        cy.criarPerfil(perfilImportado)
 
         cy.get('[data-test="alert"]').should('contain', 'Perfil Criado')
     });
