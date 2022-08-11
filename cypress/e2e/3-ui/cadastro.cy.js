@@ -10,7 +10,7 @@ describe('Funcionalidade: Cadastro', () => {
         const emailFake = faker.internet.email(nomeFake);
         const senhaFake = faker.internet.password();
 
-        cy.cadastro(nomeFake, emailFake, senhaFake, senhaFake);
+        cy.cadastrar(nomeFake, emailFake, senhaFake, senhaFake);
 
         cy.get('.large').should('contain', 'Dashboard')
         cy.contains('Bem-vindo '+nomeFake).should('exist')
@@ -22,13 +22,13 @@ describe('Funcionalidade: Cadastro', () => {
         const emailFake = faker.internet.email(nomeFake);
         const senhaFake = faker.internet.password();
         
-        cy.cadastro(nomeFake, emailFake, senhaFake, senhaFake);
+        cy.cadastrar(nomeFake, emailFake, senhaFake, senhaFake);
         cy.get('.large').should('contain', 'Dashboard')
         cy.contains('Bem-vindo '+nomeFake).should('exist')
         
         cy.logout()
 
-        cy.cadastro(nomeFake, emailFake, senhaFake, senhaFake);
+        cy.cadastrar(nomeFake, emailFake, senhaFake, senhaFake);
         cy.get('[data-test="alert"]').should('contain', 'Usuário já registrado')
         
     });
