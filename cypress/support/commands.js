@@ -23,8 +23,32 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('login', (email, password) => {
+    cy.visit('login')
 
-Cypress.Commands.add('cadastro', (name, email, password, confirmPassword) => {
+    cy.get('[data-test="login-email"] > .MuiInputBase-root > .MuiInputBase-input').type(email)
+    cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(password)
+    cy.get('[data-test="login-submit"]').click()
+})
+
+Cypress.Commands.add('gerarToken',(email, password) => {
+    cy.request({
+        method: 'POST',
+        url: '/api/auth',
+        body: {
+            "email": email,
+            "password": password
+        }
+    }).then((response) => {
+        return response.body.jwt
+    })
+})
+
+Cypress.Commands.add('logout', () => {
+    cy.get('[data-test="navbar-logout"]').click()
+})
+
+Cypress.Commands.add('cadastrar', (name, email, password, confirmPassword) => {
     cy.visit('cadastrar')
 
     cy.get('[data-test="register-name"] > .MuiInputBase-root > .MuiInputBase-input').type(name)
