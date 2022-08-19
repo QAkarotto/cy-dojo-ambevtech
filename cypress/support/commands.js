@@ -31,7 +31,7 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('[data-test="login-submit"]').click()
 })
 
-Cypress.Commands.add('gerarToken',(email, password) => {
+Cypress.Commands.add('gerarToken', (email, password) => {
     cy.request({
         method: 'POST',
         url: '/api/auth',
@@ -58,14 +58,32 @@ Cypress.Commands.add('cadastrar', (name, email, password, confirmPassword) => {
     cy.get('[data-test="register-submit"]').click()
 })
 
-Cypress.Commands.add('login', (email, password) => {
-    cy.visit('login')
-
-    cy.get('[data-test="login-email"] > .MuiInputBase-root > .MuiInputBase-input').type(email)
-    cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(password)
-    cy.get('[data-test="login-submit"]').click()
+Cypress.Commands.add('criarPostAPI', (token, text) => {
+    cy.request({
+        method: 'POST',
+        url: '/api/posts',
+        headers: {
+            Cookie: token
+        },
+        body: {
+            "text": text
+        }
+    }).then((response) => {
+        return response.body._id
+    })
 })
 
-Cypress.Commands.add('logout', () => {
-    cy.get('[data-test="navbar-logout"]').click()
+Cypress.Commands.add('curtirPostAPI', (token, text) => {
+    cy.request({
+        method: 'POST',
+        url: '/api/posts',
+        headers: {
+            Cookie: token
+        },
+        body: {
+            "text": text
+        }
+    }).then((response) => {
+        return response.body._id
+    })
 })
