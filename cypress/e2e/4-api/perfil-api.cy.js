@@ -33,7 +33,7 @@ describe('Funcionalidade: Perfil via API', () => {
         });
     });
 
-    it.only('GET Deve consultar perfil do usuário - usando token dinâmico com custom commands', () => {
+    it('GET Deve consultar perfil do usuário - usando token dinâmico com custom commands', () => {
 
         cy.request({
             method: 'GET',
