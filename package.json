@@ -4,7 +4,9 @@
   "description": "DOJO de Cypress da AmbevTech",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy-dashboard": "npx cypress run --record --key b009aab2-34b2-4b12-93b9-6d72036ad53c",
+    "cy-run": "npx cypress run --browser chrome"
   },
   "repository": {
     "type": "git",
