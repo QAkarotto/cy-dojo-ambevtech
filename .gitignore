@@ -106,5 +106,4 @@ dist
 videos/
 screenshots/
 package-lock.json
-notes.md
 /allure-results
