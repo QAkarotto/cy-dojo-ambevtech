@@ -107,3 +107,4 @@ videos/
 screenshots/
 package-lock.json
 /allure-results
+yarn.lock
