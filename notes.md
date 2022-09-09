@@ -1,4 +1,4 @@
-# DESAFIO SEMANA 1: Automatizar a funcionalidade Criarperfil
+# DESAFIO SEMANA 1: Automatizar a funcionalidade Criar perfil
 
 * Usar boas práticas aprendidas:
     * Comandos customizados;
