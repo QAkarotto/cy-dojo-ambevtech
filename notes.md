@@ -9,7 +9,7 @@ Para fazer networking com outros QAs
 ### Funcionalidades envolvidas
 * Cadastro
 * Login
-* Criar pergil
+* Criar perfil
 * Adicionar experiencia
 * Adicionar formação academica
 
