@@ -1,4 +1,4 @@
-# DESAFIO SEMANA 2: Automatizar qualquer API que exija token 
+# ✅ DESAFIO SEMANA 2: Automatizar qualquer API que exija token 
 >https://conexaoqa.herokuapp.com/api-docs/
 
 * Criar pelo menos 2 validações;
