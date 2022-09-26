@@ -1,3 +1,4 @@
+//UI
 Cypress.Commands.add("login", (email, password) => {
 	cy.visit("login");
 
@@ -21,6 +22,7 @@ Cypress.Commands.add("cadastrar", (name, email, password, confirmPassword) => {
 });
 
 Cypress.Commands.add("criarPerfil", (perfil) => {
+	cy.visit("dashboard");
 	cy.get('[data-test="dashboard-createProfile"]').click();
 	cy.get("#mui-component-select-status").click();
 	cy.get(`li[data-value="${perfil.status}"]`).click();
@@ -31,28 +33,77 @@ Cypress.Commands.add("criarPerfil", (perfil) => {
 	cy.get('[data-test="profile-gitHub"]').type(perfil.usuarioGitHub);
 	cy.get('[data-test="profile-bio"]').invoke("val", perfil.bio);
 	cy.get('[data-test="profile-socials"]').click();
-	cy.get(
-		'[data-test="profile-twitter"]'
-	).type(perfil.twitterUrl);
-	cy.get(
-		'[data-test="profile-facebook"]'
-	).type(perfil.facebookUrl);
-	cy.get(
-		'[data-test="profile-youtube"]'
-	).type(perfil.youtubeUrl);
-	cy.get(
-		'[data-test="profile-linkedin"]'
-	).type(perfil.linkedinUrl);
-	cy.get(
-		'[data-test="profile-instagram"]'
-	).type(perfil.instagramUrl);
-	cy.get(
-		'[data-test="profile-medium"]'
-	).type(perfil.mediumUrl);
+	cy.get('[data-test="profile-twitter"]').type(perfil.twitterUrl);
+	cy.get('[data-test="profile-facebook"]').type(perfil.facebookUrl);
+	cy.get('[data-test="profile-youtube"]').type(perfil.youtubeUrl);
+	cy.get('[data-test="profile-linkedin"]').type(perfil.linkedinUrl);
+	cy.get('[data-test="profile-instagram"]').type(perfil.instagramUrl);
+	cy.get('[data-test="profile-medium"]').type(perfil.mediumUrl);
 
 	cy.get('[data-test="profile-submit"]').click();
 });
 
+Cypress.Commands.add(
+	"adicionarExperienciaAtual",
+	(posicao, empresa, localizacao, dataInicio, descricao) => {
+		cy.visit("dashboard");
+		cy.get('[data-test="dashboard-addExperience"]').click();
+		cy.get('[data-test="experience-title"]').type(posicao);
+		cy.get('[data-test="experience-company"]').type(empresa);
+		cy.get('[data-test="experience-location"]').type(localizacao);
+		cy.get('[data-test="experience-from"]').type(dataInicio);
+		cy.get('[data-test="experience-current"]').click();
+		cy.get('[data-test="experience-description"]').type(descricao);
+		cy.get('[data-test="experience-submit"]').click();
+	}
+);
+
+Cypress.Commands.add(
+	"adicionarExperienciaAnterior",
+	(posicao, empresa, localizacao, dataInicio, dataFim, descricao) => {
+		cy.visit("dashboard");
+		cy.get('[data-test="dashboard-addExperience"]').click();
+		cy.get('[data-test="experience-title"]').type(posicao);
+		cy.get('[data-test="experience-company"]').type(empresa);
+		cy.get('[data-test="experience-location"]').type(localizacao);
+		cy.get('[data-test="experience-from"]').type(dataInicio);
+		cy.get('[data-test="experience-to"]').type(dataFim);
+		cy.get('[data-test="experience-description"]').type(descricao);
+		cy.get('[data-test="experience-submit"]').click();
+	}
+);
+
+Cypress.Commands.add(
+	"adicionarFormacaoAcademicaCursando",
+	(escola, grau, curso, dataInicio, descricao) => {
+		cy.visit("dashboard");
+		cy.get('[data-test="dashboard-addEducation"]').click();
+		cy.get('[data-test="education-school"]').type(escola);
+		cy.get('[data-test="education-degree"]').type(grau);
+		cy.get('[data-test="education-fieldOfStudy"]').type(curso);
+		cy.get('[data-test="education-from"]').type(dataInicio);
+		cy.get('[data-test="education-current"]').click();
+		cy.get('[data-test="education-description"]').type(descricao);
+		cy.get('[data-test="education-submit"]').click();
+	}
+);
+
+Cypress.Commands.add(
+	"adicionarFormacaoAcademicaConcluida",
+	(escola, grau, curso, dataInicio, dataFim, descricao) => {
+		cy.visit("dashboard");
+		cy.get('[data-test="dashboard-addEducation"]').click();
+		cy.get('[data-test="education-school"]').type(escola);
+		cy.get('[data-test="education-degree"]').type(grau);
+		cy.get('[data-test="education-fieldOfStudy"]').type(curso);
+		cy.get('[data-test="education-from"]').type(dataInicio);
+		cy.get('[data-test="education-to"]').type(dataFim);
+		cy.get('[data-test="education-description"]').type(descricao);
+		cy.get('[data-test="education-submit"]').click();
+	}
+);
+
+//API
 Cypress.Commands.add("gerarTokenAPI", (email, password) => {
 	cy.request({
 		method: "POST",
@@ -76,7 +127,7 @@ Cypress.Commands.add("criarPostAPI", (token, text) => {
 		body: {
 			text: text,
 		},
-	})
+	});
 });
 
 Cypress.Commands.add("consultarPostsAPI", (token) => {

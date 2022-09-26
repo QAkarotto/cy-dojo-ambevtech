@@ -30,8 +30,8 @@ describe("Funcionalidade: Login", () => {
 		);
 	});
 
-	it.only("Deve fazer login com sucesso - Usando App Actions", () => {
-		cy.loginAPP("goku@email.com", "senha@123");
+	it("Deve fazer login com sucesso - Usando App Actions", () => {
+		cy.login("goku@email.com", "senha@123");
 		cy.visit("dashboard");
 		cy.get('[data-test="dashboard-welcome"]').should(
 			"contain",
