@@ -4,7 +4,10 @@
   "description": "DOJO de Cypress da AmbevTech",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy-dashboard": "npx cypress run --record --key b009aab2-34b2-4b12-93b9-6d72036ad53c",
+    "cy-run": "npx cypress run --browser chrome",
+    "cy-allure": "npx cypress run --env allure=true"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "cypress": "^10.4.0"
   },
   "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.28.5",
     "faker-br": "^0.4.1"
   }
 }
