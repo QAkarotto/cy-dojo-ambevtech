@@ -17,7 +17,7 @@ describe("Funcionalidade: Visualizar Perfil", () => {
 		cy.visit("perfis");
 	});
 
-	it.only("Deve validar o primeiro item da lista com sucesso", () => {
+	it("Deve validar o primeiro item da lista com sucesso", () => {
 		cy.get('[data-test="profile-name"]')
 			.first()
 			.should("have.text", "Goku Guerra");
