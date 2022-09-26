@@ -1,3 +1,15 @@
+# ✅ DESAFIO SEMANA 1: Automatizar a funcionalidade Criar perfil
+
+* Usar boas práticas aprendidas:
+    * Comandos customizados;
+    * Fixture;
+    * beforeEach();
+    * Reaproveitamentos;
+    * Etc.
+
+* Criar pelo menos 2 cenários (um negativo e outro positivo).
+
+>Ficar a vontade para implementar mais cenários
 # ✅ DESAFIO SEMANA 2: Automatizar qualquer API que exija token 
 >https://conexaoqa.herokuapp.com/api-docs/
 
@@ -6,7 +18,7 @@
 
 >Ficar a vontade para implementar mais cenários;
 
-# DESAFIO SEMANA 3: Fazer um fluxo E2E no conexão QA
+# ✅ DESAFIO SEMANA 3: Fazer um fluxo E2E no conexão QA
 **Definição:** Testes E2E testam um fluxo de ponta a ponta, diferente do teste da funcionalidade, integrar diferentes funcionalidades
 
 ## User story
@@ -29,7 +41,6 @@ Para fazer networking com outros QAs
 * Fixture em pelo menos um dos recursos
 * Colocar um resultado esperado único
 
-<p> Enviar link do repositório para fabiokaia25@gmail.com e renato.saoli@gmail.com
 # DESAFIO SEMANA 4: Automatizar pelo menos 5 testes do seu produto (Web e API)
 
 * Usar boas práticas aprendidas em aula
