@@ -4,7 +4,7 @@ describe('Funcionalidade: Perfil via API', () => {
     let token
 
     beforeEach(() => {
-        cy.gerarToken("goku@email.com", "senha@123").then((tkn) => {
+        cy.gerarTokenAPI("goku@email.com", "senha@123").then((tkn) => {
             token = tkn
         })
     });

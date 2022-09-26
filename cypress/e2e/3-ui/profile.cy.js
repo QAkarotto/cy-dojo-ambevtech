@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import mockProfile from "../../fixtures/perfis.json";
+import mockProfile from "../../fixtures/profile.json";
 
 describe("Funcionalidade: Visualizar Perfil", () => {
 	beforeEach(() => {
