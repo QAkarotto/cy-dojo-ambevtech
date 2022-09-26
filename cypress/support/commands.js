@@ -23,7 +23,7 @@ Cypress.Commands.add("cadastrar", (name, email, password, confirmPassword) => {
 Cypress.Commands.add("criarPerfil", (perfil) => {
 	cy.get('[data-test="dashboard-createProfile"]').click();
 	cy.get("#mui-component-select-status").click();
-	cy.get('li[data-value="Estudante ou Aprendendo"]').click();
+	cy.get(`li[data-value="${perfil.status}"]`).click();
 	cy.get('[data-test="profile-company"]').type(perfil.empresa);
 	cy.get('[data-test="profile-webSite"]').type(perfil.website);
 	cy.get('[data-test="profile-location"]').type(perfil.localizacao);

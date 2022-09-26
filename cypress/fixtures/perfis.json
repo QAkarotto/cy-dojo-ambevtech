@@ -1,5 +1,6 @@
 [
     {
+        "status": "QA Pleno",
         "empresa": "Ambev Tech",
         "website": "https://about.me/qakarotto",
         "localizacao": "Jaguariaíva, PR",
@@ -14,6 +15,7 @@
         "mediumUrl": "https://medium.com/@qakarotto"
     },
     {
+        "status": "Estudante ou Aprendendo",
         "empresa": "Corporação Capsula",
         "website": "https://dragonball.fandom.com/pt-br/wiki/Goku",
         "localizacao": "439 Distrito Leste",
